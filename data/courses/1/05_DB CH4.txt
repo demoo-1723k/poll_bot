@@ -1,0 +1,225 @@
+Mettu University
+Fundamentals of Database System
+Chapter 4: Functional Dependency and Normalization
+Compiled by: Diriba G (MSc. in CSE)
+1
+Outline
+Overview
+
+Functional dependency
+
+Normal forms
+
+2
+Functional Dependency
+ Data Dependency: Two data items A and B are said to be in a determinant or dependent
+relationship if certain values of data item B always appears with certain values of
+data item A.
+ The essence of this idea is that if the existence of something, call it A, implies that B
+must exist and have a certain value, then we say that “B is functionally dependent
+on A.“
+Functional dependency(FD): is a set of constraints between two attributes in a relation.
+Functional dependency says that if two tuples have same values for attributes A1, A2,...,
+An, then those two tuples must have to have same values for attributes B1, B2, ..., Bn.
+3
+Cont..
+In general, a functional dependency is a relationship among attributes. In
+relational databases, we can have a determinant that governs one other
+attribute or several other attributes.
+Functional dependency is represented by an arrow sign → that is, X→Y,
+where X functionally determines Y. The left-hand side attributes determine
+the values of attributes on the right-hand side.
+X  Y holds if two tuples have the same value for X, they must have the
+same value for Y .
+AB is read as; B is functionally dependent on A
+4
+Cont..
+We also often express this idea by saying that:
+"A determines B," or that
+"B is a function of A," or that
+ "A functionally governs B.“
+Example
+Dinner Type of wine
+Meat Red
+Fish White
+Cheese Rose
+Since the type of Wine served depends on the type of Dinner, we say Wine is functionally
+dependent on Dinner.
+Dinner  Wine
+5
+Types of Functional Dependency
+Partial Dependency:
+If an attribute which is not a member of the primary key is dependent on some part
+of the primary key (if we have composite primary key) then that attribute is partially
+functionally dependent on the primary key.
+Let {A, B} is the Primary Key and C is no key attribute.
+Then if {A, B}C and BC or AC
+Then C is partially functionally dependent on {A, B}
+6
+Cont..
+Full Dependency:
+If an attribute which is not a member of the primary key is not dependent on some
+part of the primary key but the whole key (if we have composite primary key)
+then that attribute is fully functionally dependent on the primary key.
+Let {A, B} is the Primary Key and C is no key attribute
+Then if {A, B}C and BC and AC does not hold ( if B cannot determine C
+and A cannot determine C).
+Then C Fully functionally dependent on {A,B}.
+7
+Cont..
+Transitive Dependency:
+In mathematics and logic, a transitive relationship is a relationship of the
+following form: "If A implies B, and if also B implies C, then A implies C.“
+Example:
+If Mr. X is a Human, and if every Human is an Animal, then Mr. X must be
+an Animal.
+8
+Cont..
+Generalized way of describing transitive dependency is that:
+If A functionally governs B, AND
+If B functionally governs C
+THEN A functionally governs C
+Provided that neither C nor B determines A i.e. (B / A and C / A)
+In the normal notation:
+{(AB) AND (BC)}==> AC provided that B / A and C / A
+9
+Normalization
+Database normalization is a series of steps followed to obtain a database
+design that allows for consistent storage and efficient access of data in
+a relational database. These steps reduce data redundancy and the risk of
+data becoming inconsistent.
+It is the process of identifying the logical associations between data items
+and designing a database that will represent such associations but without
+suffering the update anomalies which are;
+Insertion Anomaly – adding new rows forces user to create duplicate
+data
+Deletion Anomaly – deleting a row may cause loss of other data
+representing completely different facts
+Modification Anomaly – changing data in a row forces changes to other
+rows because of duplication
+10
+Cont..
+Steps of Normalization
+We have various levels or steps in normalization called Normal Forms.
+A table in a relational database is said to be in a certain normal form if it
+satisfies certain constraints.
+11
+Cont..
+Normalization towards a logical design consists of the following steps:
+Un-Normalized Form:
+Identify all data elements
+First Normal Form:
+Find the key with which you can find all data
+Second Normal Form:
+Remove partial dependencies.
+Make all data dependent on the whole key.
+Third Normal Form
+Remove non-key dependencies.
+Make all data dependent on nothing but the key.
+For most practical purposes, databases are considered normalized if they adhere
+to third normal form.
+12
+First Normal Form (1NF)
+Requires that all column values in a table are atomic (e.g., a number is an atomic
+value, while a list or a set is not).
+We have two ways of achieving this:
+Putting each repeating group into a separate table and connecting them with a
+primary key-foreign key relationship
+Moving this repeating group to a new row by repeating the common attributes.
+If so then Find the key with which you can find all data.
+13
+Cont..
+Definition: a table (relation) is in 1NF
+If
+There are no duplicated rows in the table. Unique identifier
+Each cell is single-valued (i.e., there are no repeating groups).
+Entries in a column (attribute, field) are of the same kind.
+14
+Cont..
+Example for First Normal form (1NF )
+Not normalized
+15
+Cont..
+IN FIRST NORMAL FORM (1NF)
+Remove all repeating groups.
+Distribute the multi-valued attributes into different rows and identify a
+unique identifier for the relation so that is can be said is a relation in
+relational database.
+16
+Second Normal form 2NF
+No partial dependency of a non-key attribute on part of the primary key.
+A relation schema R is in 2NF if every nonprime attribute A in R is fully
+functionally dependent on the primary key of R.
+This will result in a set of relations with a level of Second Normal Form.
+Any table that is in 1NF and has a single-attribute (i.e., a non-composite) primary
+key is automatically in 2NF.
+Definition: a table (relation) is in 2NF
+If
+It is in 1NF and
+If all non-key attributes are dependent on the entire primary key.
+i.e. no partial dependency.
+17
+Example for 2NF:
+This schema is in its 1NF since we don’t have any repeating groups or attributes
+with multi-valued property.
+To convert it to a 2NF we need to remove all partial dependencies of non key
+attributes on part of the primary key.
+18
+Cont..
+{EmpID, ProjNo}EmpName, ProjName, ProjLoc, ProjFund,
+ProjMangID, Incentive
+But in addition to this we have the following dependencies
+FD1: {EmpID}EmpName
+FD2: {ProjNo}ProjName, ProjLoc, ProjFund, ProjMangID
+FD3: {EmpID, ProjNo}Incentive
+19
+Third Normal Form (3NF)
+Eliminate columns dependent on another non-Primary Key.
+If attributes do not contribute to a description of the key, remove
+them to a separate table.
+This level avoids update and delete anomalies.
+Definition: a Table (Relation) is in 3NF
+If
+It is in 2NF and
+There are no transitive dependencies between a primary key and non-primary key
+attributes.
+20
+Example for (3NF)
+Assumption: Students of same batch live in one building or dormitory
+21
+Cont..
+This schema is in its 2NF since the primary key is a single attribute.
+Let’s take StudID, Year and Dormitary and see the dependencies.
+StudIDYear AND YearDormitary
+And Year cannot determine StudID and Dormitary can not determine
+StudID
+Then transitively StudIDDormitary
+To convert it to a 3NF we need to remove all transitive dependencies of non
+key attributes on another non-key attribute.
+The non-primary key attributes, dependent on each other will be moved to
+another table and linked with the main table using Candidate Key-Foreign
+Key relationship.
+22
+Cont...
+23
+Cont..
+Generally, even though there are other four additional levels of normalization, a
+table is said to be normalized if it reaches 3NF.
+A database with all tables in the 3NF is said to be normalized database.
+NB: to remember the rationale for normalization up to 3NF:
+No repeating or redundancy fields in the table.
+The fields depend upon the key: the table should solely depend on the key.
+ The whole key: no partial key dependency.
+And nothing but the key: no inter data dependency.
+24
+Cont..
+Graphical illustration of different phases of normalization
+25
+Additional examples for normal forms
+26
+Cont..
+27
+Cont..
+28
+End of Chapter 4
+29

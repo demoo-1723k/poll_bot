@@ -1,0 +1,278 @@
+Mattu University
+College of Engineering and Technology
+Department of Computer Science
+Fundamentals of Database Systems
+Chapter 2: Database System Architecture
+Compiled by: Dejene B(MSc)
+1
+Outline
+✓Data models, Schema and Instances
+✓Database management system
+✓DBMS Architecture and data independence
+✓Database management system language and interfaces
+2
+Data models, Schema, and Instances
+▪ Data model a collection of concepts that can be used to describe the structure of a
+database, the operations for manipulating these structures, and certain constraints that
+the database should obey.
+▪ Structure of the database means: The data types,relationships and Constraints that
+applied to the data.
+▪ Dynamic aspect or behavior of a database application.
+▪ There are two basic components of the database. The two components are:
+1. the definition of the Relation or the Table and
+2. the actual data stored in each table.
+3
+Data Model Operations
+▪ These operations are used for specifying database retrievals and updates by referring
+to the constructs of the data model.
+▪ Operations on the data model may include :
+✓basic model operations (e.g. generic insert, delete, update) and
+✓user-defined operations (e.g. compute_student_gpa, update_inventory)
+4
+Data model structure and constraints
+✓Constructs are used to define the database structure.
+✓Constructs typically include elements as well as groups of elements (eg. Entity, record,
+table) and relationship among those groups.
+Constraints:- specify some restrictions on valid data, these constraints must be enforced
+all times.
+5
+Categories of data model
+✓Conceptual/high-level
+✓Representational/implementation data models
+✓Physical/low-level data models
+Conceptual data model:-
+✓Provide concepts that are close to the way any users perceive data.
+✓Also called entity-based or object based data model.
+▪ Three basic concepts of conceptual data model are:
+✓Entity: real world thing
+✓Attributes: properties or characteristics of an entity
+✓Relationship: association between two entities
+6
+Cont..
+Example:
+▪ Customer and Product are two entities. Customer number and name are attributes of
+the Customer entity
+▪ Product name and price are attributes of product entity
+▪ Sale is the relationship between the customer and product
+7
+Cont..
+▪ Characteristics of conceptual data model:
+✓Offers Organization-wide coverage of the business concepts.
+✓This type of Data Models are designed and developed for a business audience.
+✓The conceptual model is developed independently of hardware specifications like data
+storage capacity, location or software specifications like DBMS vendor and
+technology.
+✓The focus is to represent data as a user will see it in the “real world.”
+8
+Cont..
+Representational/implementation data model:
+✓This type of data model is used to represent only the logical part of the database and does
+not represent the physical structure of the databases.
+✓The representational data model allows us to focus primarily, on the design part of the
+database.
+✓A popular representational model is Relational model.
+9
+Cont..
+Physical data model:
+✓Provide
+concepts that describe details of how data is stored in the computer.
+✓It is representation of a data design as implemented, intended to be implemented in the
+DBMS.
+✓It has all the information of the format in which the file are present, and
+✓The structure of the databases, presence of external data structures and their relationships.
+:
+Example
+10
+Cont..
+Characteristics of physical data model:
+✓The physical data model describes data need for a single project or application
+though it maybe integrated with other physical data models based on project scope.
+✓Data Model contains relationships between tables that which addresses cardinality
+and nullability of the relationships.
+✓Developed for a specific version of a DBMS, location, data storage or technology
+to be used in the project.
+✓Columns should have exact datatypes, lengths assigned and default values.
+✓Primary and Foreign keys, views, indexes, access profiles, and authorizations,
+etc. are defined.
+11
+12
+Schema and Instances
+▪ Database schema:- description of database is called database schema.
+✓It describes how data is structured.
+✓Specifies name of relation and collection of attributes.
+✓Specified during database design and should not be changed unless
+during maintenance.
+▪ Schema construct: Each object in the schema such as student, course are
+schema construct.
+13
+Cont..
+▪ Example of database schema
+14
+Cont..
+Database instances/snapshot/extension:
+▪ Also known as current set of occurrences.
+▪ The data in the database at a particular moment in time is called
+instance.
+▪ Changes rapidly
+15
+Cont..
+Example of
+database instances:
+16
+Database Management System
+▪ Database Management System (DBMS) is a Software package used for providing
+EFFICIENT, CONVENIENT and SAFE MULTI-USER storage of and access to
+.
+MASSIVE amounts of PERSISTENT data
+▪ A DBMS also provides a systematic method for:
+✓creating,
+✓updating,
+✓storing,
+✓retrieving data in a database.
+17
+cont...
+Having this in mind, a full scale DBMS should at least have the following services to
+provide to the user.
+✓Data storage, retrieval and update in the database
+✓A user accessible catalogue .
+✓Concurrency Control Services: access and update on the database by different users
+simultaneously should be implemented correctly.
+✓Recovery Services: a mechanism for recovering the database after a failure must be
+available.
+18
+cont...
+▪ Authorization Services (Security): must support the implementation of access
+and authorization service to database administrator and users.
+▪ Integrity Services:
+✓Services to promote data independency between the data and the application
+▪ Utility services: sets of utility service facilities like
+✓Importing data
+✓Statistical analysis support
+✓Index reorganization
+✓Garbage collection
+19
+DBMS architecture and data independence
+▪ A DBMS architecture allows dividing the database system into individual components
+that can be independently modified, changed, replaced, and altered.
+▪ It describes how data in the database is viewed by the users.
+▪ It is not concerned with how the data is handled and processed by the DBMS.
+20
+Conti..
+▪ This enables the users to manipulate the data without worrying about where it is located
+or how it is actually stored.
+▪ In this architecture, the overall database description can be defined at three levels,
+namely,
+✓internal,
+✓conceptual, and
+✓external levels,
+and thus, named three-level DBMS architecture.
+▪ This architecture is proposed by ANSI/SPARC (American National Standards Institute/Standards
+Planning and Requirements Committee) and hence, is also known as ANSI/SPARC architecture.
+21
+DBMS Architecture
+▪ The three schema-architecture
+22
+Cont..
+▪ Internal level:
+✓Describes physical storage structure of the database and also known as
+physical level.
+✓At this level, various aspects are considered to achieve optimal runtime
+performance and storage space utilization. These aspects include:
+▪ Storage space allocation techniques for data and indexes, access
+paths such as indexes, data compression and encryption techniques,
+and record placement.
+23
+Cont..
+Conceptual level:
+▪ Describes structure of the whole database for the whole users.
+▪ It describes what data is stored in the database and relationship among the
+data.
+External level:
+▪ Describes part of database of interest to a particular user group.
+▪ It is users view of the database.
+▪ Different users have their own customized view of the database.
+24
+Cont..
+▪ To understand the three-schema architecture, consider the three levels of
+the BOOK file in Online Book database as shown below:
+25
+Data independence
+▪ One of the main advantage of the three-schema architecture is it provides
+data independence.
+▪ Data independence is the ability to change the schema at one level of the
+database system without having to change the schema at the other level.
+26
+DBMS languages and Interfaces
+❖Because a database supports a number of user groups, as mentioned previously, the
+DBMS must have languages and interfaces that support each user group.
+❖DDL(data definition language), used by the DBA and database designers to define the
+conceptual and internal schemas.
+✓Commands for setting up schema or intention of the database.
+✓These commands are used to setup a database, create, delete, and alter table with
+the facility of handling constraints.
+27
+DBMS languages and Interfaces
+✓SDL(storage definition language):is used to specify the internal schema.
+✓VDL(view definition language):is used to specify the user views and their mappings to
+the conceptual schema.
+✓DML(data manipulation language):Manipulations include retrieval, insertion, deletion
+and modification.
+28
+Cont..
+DBMS Interfaces: The following are some DBMS interfaces,
+▪ Menu-Based Interfaces for Web Clients or Browsing
+✓Present users with list of options (menus)
+✓Lead user through formulation of request
+✓Query is composed of selection options from menu displayed by system.
+▪ Forms-Based Interfaces
+✓Displays a form to each user.
+✓User can fill out form to insert new data or fill out only certain entries.
+✓Designed and programmed for naïve users as interfaces to canned transactions.
+29
+Cont..
+❖Graphical User Interfaces
+✓Displays a schema to the user in diagram form. The user can specify a query by
+manipulating the diagram. GUIs use both forms and menus.
+❖Natural Language Interfaces
+✓Accept requests in written English, or other and attempt to understand them.
+✓Interface has its own schema, and a dictionary of important words. Uses the
+schema and dictionary to interpret a natural language request.
+30
+Cont..
+❖Interfaces for Parametric Users
+✓ Parametric users have small set of operations they perform.
+✓ Analysts and programmers design and implement a special interface for each
+class of naïve users.
+✓ Often a small set of commands included to minimize the number of keystrokes
+required. (I.e. function keys)
+31
+Cont..
+❖Interfaces for the DBA
+✓Systems contain privileged commands only for DBA staff.
+✓Include commands for creating accounts, setting parameters, authorizing
+accounts, changing the schema, reorganizing the storage structures etc.
+✓Database System Environment
+32
+End of Chapter 2
+.
+!
+u
+o
+Y
+k
+n
+a
+h
+T
+33
+Indiviual Assignment(5%)
+#Do all the questions below accordingly
+1). Describe clearly the Centralized and Client-server DBMS Architecture?
+2). Describe the following DBMS tier Architecture
+a) 1-tier DBMS architecture
+b) 2-tier DBMS architecture
+c) 3-tier DBMS architecture
+3). To design and use a database, there will be the interaction or integration of
+database system components. Therefore explain clearly and briefly the DBMS
+components and how they interacting each other?
+34

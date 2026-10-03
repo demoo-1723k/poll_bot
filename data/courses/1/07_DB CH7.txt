@@ -1,0 +1,242 @@
+Mettu University
+Fundamentals of Database System
+Chapter 7: Relational Model &Relational Algebra
+Compiled by: Diriba G. (MSc. in CSE)
+1
+Outline
+Introduction to;
+
+Relational model and Relational algebra
+
+Relational algebra operations
+
+Selection
+
+Projection
+
+Cartesian product
+
+Union and Set difference
+
+Different relational Algebra Operations from Set theory and additional
+
+operation with example
+2
+What is Relational Model refers to?
+ Relational model supports simple, powerful query languages in which
+allows manipulation and retrieval of data from a database.
+3
+Relational Model Terminology
+Tuple is a row of a relation.
+Degree is the number of attributes in a relation.
+Cardinality is the number of tuples in a relation.
+Relational Database is a collection of normalized relations with distinct
+relation names.
+4
+Instances of Branch and Staff (part) Relations
+5
+Database Relations
+Relation schema
+Named relation defined by a set of attribute and domain name pairs.
+Relational database schema
+Set of relation schemas, each with a distinct name.
+6
+Properties of Relations
+Relation name is distinct from all other relation names in relational schema.
+Each cell of relation contains exactly one atomic (single) value.
+Each attribute has a distinct name.
+Values of an attribute are all from the same domain.
+Each tuple is distinct; there are no duplicate tuples.
+Order of attributes has no significance.
+Order of tuples has no significance, theoretically.
+7
+Relational Algebra
+ Relational algebra is a formal language associated with the relational
+model.
+ we may describe the relational algebra as procedural language in which
+user tells the system exactly what and how to manipulate the data. And also
+it can be used to tell the DBMS how to build a new relation from one or
+more relations in the database.
+8
+Relational algebra operations
+The basic set of operations for the relational model is known as the
+relational algebra. These operations enable a user to specify basic retrieval
+requests.
+There are different basic operations that could be applied on relations based
+on the requirement. However these five operation listed below are the most
+important and basic operations in relational algebra:
+These operations are:
+9
+Cont.…
+Selection. It selects a subset of rows from a relation.
+Projection. Deletes unwanted columns from a relation
+Cartesian product. Allows to concatenate a tuple from one relation with all
+the tuples from the other relation.
+Union. Tuples in relation R1, or in relation R2 .
+ Set Difference. Tuples in relation R1, but not in relation R2
+ These operations perform most of the data retrieval needed. And also there is
+Join, Intersection which can be expressed in terms of this 5 basic operations.
+10
+Cont..
+11
+Cont..
+12
+Relational Algebra Operations from Set Theory: SET DIFFERENCE (cont.)
+SET DIFFERENCE (also called MINUS or EXCEPT) is denoted by R – S
+The result of R – S, is a relation that includes all tuples that are in R but not
+in S
+The attribute names in the result will be the same as the attribute names
+in R
+The two operand relations R and S must be ―type compatible‖
+13
+Some properties of UNION, INTERSECT, and SET DIFFERENCE
+Notice that both union and intersection are commutative operations; that is
+R  S = S  R, and R  S = S  R
+Both union and intersection can be treated as n-ary operations applicable to any number
+of relations as both are associative operations; that is
+R  (S  T) = (R  S)  T
+(R  S)  T = R  (S  T)
+The minus operation is not commutative; that is, in general
+R – S ≠ S – R
+14
+Relational Algebra Operations from Set Theory: CARTESIAN PRODUCT
+CARTESIAN (or CROSS) PRODUCT Operation
+This operation is used to combine tuples from two relations in a
+combinatorial fashion.
+Denoted by R(A1, A2, . . ., An) x S(B1, B2, . . ., Bm)
+Result is a relation Q with degree n + m attributes:
+Q(A1, A2, . . ., An, B1, B2, . . ., Bm), in that order.
+The resulting relation state has one tuple for each combination of
+tuples—one from R and one from S.
+15
+Cont..
+Hence, if R has n tuples (denoted as |R| = n ), and S has n tuples, then R
+R R S
+x S will have n * n tuples.
+R S
+The two operands do NOT have to be "type compatible‖
+16
+Binary Relational Operations: JOIN
+JOIN Operation (denoted by )
+The sequence of CARTESIAN PRODECT followed by SELECT is used
+quite commonly to identify and select related tuples from two relations
+A special operation, called JOIN combines this sequence into a single
+operation
+17
+Cont..
+This operation is very important for any relational database with more than
+a single relation, because it allows us combine related tuples from various
+relations
+The general form of a join operation on two relations R(A1, A2, . . ., An)
+and S(B1, B2, . . ., Bm) is R S
+<join condition>
+where R and S can be any relations that result from general relational
+algebra expressions.
+18
+Some properties of JOIN
+Consider the following JOIN operation:
+R(A1, A2, . . ., An) S(B1, B2, . . ., Bm)
+R.Ai=S.Bj
+Result is a relation Q with degree n + m attributes:
+Q(A1, A2, . . ., An, B1, B2, . . ., Bm), in that order.
+The resulting relation state has one tuple for each combination of tuples—r
+from R and s from S, but only if they satisfy the join condition r[Ai]=s[Bj]
+Hence, if R has n tuples, and S has n tuples, then the join result will
+R S
+generally have less than n * n tuples.
+R S
+Only related tuples (based on the join condition) will appear in the result
+19
+Cont…
+The general case of JOIN operation is called a Theta-join: R S
+theta
+The join condition is called theta
+Theta can be any general boolean expression on the attributes of R and S;
+for example:
+R.Ai<S.Bj AND (R.Ak=S.Bl OR R.Ap<S.Bq)
+Most join conditions involve one or more equality conditions ―AND‖ed
+together; for example:
+R.Ai=S.Bj AND R.Ak=S.Bl AND R.Ap=S.Bq
+20
+Binary Relational Operations: EQUIJOIN
+EQUIJOIN Operation
+The most common use of join involves join conditions with equality
+comparisons only. Such a join, where the only comparison operator used is
+=, is called an EQUIJOIN.
+In the result of an EQUIJOIN we always have one or more pairs of
+attributes (whose names need not be identical) that have identical values
+in every tuple.
+21
+Binary Relational Operations: NATURAL JOIN Operation
+NATURAL JOIN Operation is another variation of JOIN called NATURAL
+JOIN was created to get rid of the second (superfluous) attribute in an
+EQUIJOIN condition.
+because one of each pair of attributes with identical values is superfluous
+The standard definition of natural join requires that the two join attributes, or
+each pair of corresponding join attributes, have the same name in both relations
+If this is not the case, a renaming operation is applied first.
+22
+Complete Set of Relational Operations
+The set of operations including SELECT , PROJECT  , UNION ,
+DIFFERENCE -, RENAME , and CARTESIAN PRODUCT X is called a
+complete set because any other relational algebra expression can be
+expressed by a combination of these five operations.
+For example:
+R  S = (R  S ) – ((R - S)  (S - R))
+R S =  (R X S)
+<join condition> <join condition>
+23
+Recap of Relational Algebra Operations
+.
+24
+Additional Relational Operations (cont.)
+ As we have seen in previous section there are five basic operation of
+relational algebra. In additional to these different types of join operations
+were exist. For instance in natural join and equijoin, tuples without a
+matching (or related) tuple are eliminated from the join result
+Tuples with null in the join attributes are also eliminated
+This amounts to loss of information.
+25
+cont.
+A set of operations, called OUTER joins, can be used when we want to
+keep all the tuples in R, or all those in S, or all those in both relations in the
+result of the join, regardless of whether or not they have matching tuples in
+the other relation.
+The left outer join operation keeps every tuple in the first or left relation R
+in R S; if no matching tuple is found in S, then the attributes of S in the
+join result are filled or ―padded‖ with null values.
+26
+Cont...
+A similar operation, right outer join, keeps every tuple in the second or right
+relation S in the result of R S.
+A third operation, full outer join, that keeps all tuples in both the left and
+the right relations when no matching tuples are found, padding them with
+null values as needed.
+27
+Cont.…
+OUTER UNION Operations
+The outer union operation was developed to take the union of tuples from two
+relations if the relations are not type compatible.
+This operation will take the union of tuples in two relations R(X, Y) and S(X,
+Z) that are partially compatible, meaning that only some of their attributes,
+say X, are type compatible.
+The attributes that are type compatible are represented only once in the result,
+and those attributes that are not type compatible from either relation are also
+kept in the result relation T(X, Y, Z).
+28
+Cont.…
+Example Consider the following relations to understand additional join
+operation in relational algebra.The first one is student relation which has the
+following properties with certain records and the second is course relation
+which has also different properties.
+29
+Cont.…
+A). Natural join operation.
+B).Left –outer Join Operation
+30
+Cont.…
+A). Right outer join operation.
+B).Full outer join Operation
+31
+End of Chapter 7
+32

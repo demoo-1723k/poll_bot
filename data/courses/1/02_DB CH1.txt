@@ -1,0 +1,355 @@
+Fundamentals of Database Systems
+Mattu University
+College of Engineering and Technology
+Department of Computer Science
+Chapter 1: Introduction to Database Systems
+Compiled by: Dejene B (MSc )
+1
+Outline
+✓Introduction
+✓ Data, Information, and Metadata
+✓File-Based Approach
+✓Database Approach
+✓Database Development Process
+✓Database Users (Actors on the scene)
+✓Summary
+2
+Introduction
+✓What do you think a database system is?
+✓ How many of you have seen a database?
+✓ What kind of database do you know?
+✓ Think of some (real life) examples of database system?
+❖
+Why do you need to study database?-->
+✓ Because, everybody needs it.
+✓It is an integral part of our day to day life.
+3
+Basic Definitions
+✓A database is nothing more than a collection of shared information/data that exists
+over a long period of time, often many years.
+✓ Database is a collection of interrelated data.
+What is data? Data is known facts that can be recorded and have an implicit meaning.
+✓The term database refers to a collection of data that is managed by a DBMS.
+✓Database systems are designed to manage large data set in an organization.
+4
+Cont..
+✓The database is an integrated collection of facts about an organization.
+✓Organization can be a University or a department in a University , Insurance
+companies, manufacturing companies, Banks, Airlines, Telecommunications,
+Governmental and Non-governmental Organizations, Research institutions ,etc.
+✓The database is used as a central data source for other applications
+5
+Data
+✓The term data refers to known raw facts about things like people, places, events and
+concepts:
+✓Sources of data: careful observation, experiment and research .
+✓Data can exist in the form of text, graphics, images, audio and/or video
+Data in context
+6
+Flow of Data
+✓Data Information Knowledge Action
+✓Summarizing the Data
+✓ Averaging the data
+✓Graphing the data
+✓Adding Context
+✓Information is the processed data presented in a form suitable for human
+interpretation.
+✓The same data can be processed in a variety of ways to generate different kinds
+of information.
+✓Information is important for ‘informed decision making’ .
+7
+Metadata
+➢Metadata is data about data.
+✓For further understanding of large collection of data an additional description of the
+data is very important
+✓It increases the usability of the data – Self-describing nature of databases
+Metadata
+8
+Cont...
+Database systems :- are designed to manage large data set in an organization.
+Today, Databases are essential to every business.
+They are used:
+✓To maintain internal records,
+✓To present data to customers and clients on the , and
+World-Wide-Web
+✓ To support many other commercial processes.
+9
+Evolution of Database Systems
+▪ Data management passes through the different levels of development along with the
+development in technology and services.
+▪ Also the approaches to change data to information takes this level of process:we can
+classify into the following three basic approaches:
+✓ Manual approach
+✓ Traditional file based approach
+✓ Database approach
+10
+Evolution of Database Systems
+➢ The Manual Approach
+✓In the manual approach, data storage and retrieval follows the primitive and
+traditional way of information handling where cards and paper are used for
+the purpose.
+✓The data storage and retrieval will be performed using human labor.
+➢Files for as many event and objects as the organization are used to store
+information.
+➢Each of the files containing various kinds of information is labeled and stored in
+one or more cabinets.
+11
+The Manual Approach (
+Continued..)
+➢Limitations of the Manual Approach
+✓Prone to error
+✓Difficult to update, retrieve, integrate
+✓You have the data but it is difficult to compile the information
+✓Limited to small size information
+✓Cross referencing is difficult
+12
+Traditional File-Based Approach
+✓File based systems were an early attempt to computerize the manual filing system.
+This approach is the decentralized computerized data handling method.
+✓Since every application defines and manages its own data, the system is subjected
+to serious data duplication problem
+13
+cont...
+❖Example:
+University
+File-Based System
+14
+Limitations of File-Based Approach
+❖ Much efforts for adhoc query answering:
+✓What is the average grade for Mr. Said's students?
+✓List the activities for all students enrolled in CSE309.
+✓Which personnel are students as well as staff?
+❖Other limitations:
+✓Duplication of data
+✓Data dependency
+✓Slow development, high maintenance and fixed queries.
+15
+Cont..
+The most significant problem experienced by the traditional file based approach of data
+handling are the following three types of anomalies;
+✓Modification Anomalies: a problem experienced when one ore more data value is
+modified on one application program but not on others containing the same data set.
+✓Deletion Anomalies: a problem encountered where one record set is deleted from
+one application but remain untouched in other application programs.
+✓ Insertion Anomalies: a problem experienced when ever there is new data item to be
+recorded, and the recording is not made in all the applications.
+16
+Database Approach
+• Database is just a computerized record keeping system or a kind of electronic
+filing cabinet.
+• It is a shared collection of logically related data designed to meet the information
+needs of an organization. Since it is a shared corporate resource, the database is
+integrated with minimum amount of or no duplication.
+• Database is a collection of logically related data where these logically related data
+comprises entities, attributes, relationships, and business rules of an organization's
+information.
+17
+Cont..
+▪ Limitations of file-based approach tell us that: –
+✓Parameters defining data should be separately stored.
+✓There should be a way to control and manipulate data in isolation of the
+application program.
+▪ A database system can be defined as the combination of a database and a DBMS.
+▪ DBMS is a powerful tool or Software for creating and manipulating database.
+▪ Examples of DBMS:
+✓ Oracle
+✓ MS SQL Server
+✓ MS Access
+✓ PostgreSQL
+✓ MySQL
+18
+Typical DBMS Functionalities
+▪ Define a particular database in terms of its data types, structures, and constraints.
+▪ Construct or Load the initial database contents on a secondary storage medium.
+▪ Manipulating the database:
+▪ Retrieval: Querying, generating reports
+▪ Modification: Insertions, deletions and updates to its content
+▪ Accessing the database through Web applications
+▪ Processing and Sharing by a set of concurrent users and application programs – yet,
+keeping all data valid and consistent.
+19
+Cont..
+• Other features:
+✓Protection or Security measures to prevent unauthorized access
+✓Presentation and Visualization of data
+✓Maintaining the database and associated programs over the lifetime of the database
+application: Called database, software, and system maintenance.
+Because of the advantages offered by a DBMS, businesses and organizations prefer the
+database approach than the file-based approach.
+20
+Why Database Approach?
+✓User
+requirements are constantly changing
+✓Ad hoc questions need rapid answers
+✓Need to reduce long lead times and high cost in new application development. Lead time
+is the latency between the initiation and execution of a process.
+✓Data sharing throughout the organization
+✓Need to improve data consistency and access control
+✓Ease of application development and reduced development time
+21
+Cont..
+• A database system consists of:
+✓ Data (the database)
+✓ Software
+✓ Hardware
+✓ Users
+• We focus mainly on the software
+• Database systems allow users to:
+✓ Store
+✓ Update
+✓ Retrieve
+✓ Organize
+✓ Protect
+their data.
+22
+Example: University’s Database System
+Database
+Administrator
+Or System
+Developer
+23
+University Database (Cont..)
+▪ Mini-world for a University Database example: Part of a UNIVERSITY environment.
+Some mini-world entities
+:
+– Students
+– PRE-REQUISITE Courses
+– Courses
+– Departments
+– Instructors
+24
+University Database (Cont..)
+❖Some mini-world relationships:
+–
+STUDENTs take COURSEs
+– COURSEs have PRE-REQUISITE COURSEs
+– INSTRUCTORs teach COURSEs
+– COURSEs are offered by DEPARTMENTs
+– STUDENTs major in DEPARTMENTs
+Note: The above (Entities and Relationship) could be expressed in the Entityrelationship data model.
+25
+Simple Database Example
+A database that stores
+student and course
+information
+.
+26
+Main Characteristics of the Database Approach
+▪ Self-describing nature of a database system
+: A DBMS catalog stores the description
+of the database. (The description is called meta-data). This allows the DBMS software to work
+with different databases.
+▪ Insulation between programs and data:
+Called program-data independence. Allows
+changing data storage structures and operations without having to change the DBMS access
+programs.
+▪ Data Abstraction
+: A data model is used to hide storage details and present the users with a
+conceptual view of the database.
+27
+Cont..
+❖Support
+of multiple views of the data: Each user may see a different view of the
+database, which describes only the data of interest to that user.
+❖ Sharing of data and multi-user transaction processing: allowing a set of concurrent
+users to retrieve and to update the database.
+❖Concurrency control within the DBMS guarantees that each transaction is correctly
+executed or completely aborted.
+❖OLTP (Online Transaction Processing) is a major part of database applications.
+28
+Benefits of Using Database Approach
+✓Data can be shared: two or more users can access and use same data instead of storing data
+in redundant manner for each user.
+✓Improved accessibility of data: by using SQL, the users can easily access data without
+programming experience.
+✓Redundancy can be reduced: isolated data is integrated in database to decrease the
+redundant data stored at different applications.
+✓Quality data can be maintained: the different integrity constraints in the database approach
+will maintain the quality leading to better decision making.
+29
+Cont..
+✓ Transaction support can be provided: basic demands of any transaction support systems
+are implanted in a full scale DBMS.
+✓ Integrity can be maintained: data at different applications will be integrated together
+with additional constraints to facilitate shared data resource.
+✓ Security majors can be enforced: the shared data can be secured by having different
+levels of clearance and other data security mechanisms.
+✓ Improved decision support: the database will provide information useful for decision
+making.
+30
+Cont..
+✓ Standards can be enforced: the different ways of using and dealing with data by different unite
+of an organization can be balanced and standardized by using database approach.
+✓ Compactness: since it is an electronic data handling method, the data is stored compactly (no
+voluminous papers).
+✓ Speed: data storage and retrieval is fast as it will be using the modern fast computer system.
+✓ Less labor: unlike the other data handling methods, data maintenance will not demand much
+resource.
+✓ Centralized information control: since relevant data in the organization will be stored at one
+repository, it can be controlled and managed at the central level.
+31
+Disadvantages of Using the Database Approach
+✓Introduction of new professional and specialized personnel.
+✓Complexity in designing and managing data
+✓The cost and risk during conversion from the old to the new system
+✓High cost to be incurred to develop and maintain the system
+✓Complex backup and recovery services from the users perspective
+✓High impact on the system when failure occurs to the central system.
+32
+When Not to Use a DBMS?
+• Main inhibitors (costs) of using a DBMS:
+✓High initial investment and possible need for additional hardware.
+✓Overhead for providing generality, security, concurrency control, recovery, and
+integrity functions.
+• When a DBMS may be unnecessary:
+✓If the database and applications are simple, well defined, and not expected to change.
+✓If there are stringent real-time requirements that may not be met because of DBMS
+overhead.
+✓If access to data by multiple users is not required.
+33
+Cont..
+▪ When no DBMS may suit/suffice :
+▪ If the database system is not able to handle the complexity of data because of
+modeling limitations
+▪ If the database users need special operations not supported by the DBMS.
+34
+Database Development Process
+1. Enterprise modeling
+– Describes the data needed for database system
+– The real world is so complex and modeling an enterprise ,
+or even a part of it is not an easy task
+– Background knowledge of the organization is very important
+2. Conceptual database modeling:
+– Entity-relationship (E-R) modeling
+3. Logical database design:
+– Relational data modeling is used to transform the
+E-R diagram into a relational schema
+4. Physical database design and creation:
+– Detailed specification of data elements, data types, indexing options ,etc.
+– Selection of software (DBMS) and hardware
+35
+Users Involved in Database Systems
+❖They can be divided into two:
+– Actors on the Scene
+– Workers behind the Scene
+Actors on the Scene
+– Those who actually use and control the content of the data in the database
+– They include the DBA,DB Designers, End Users, Software Engineers
+❖Workers behind the Scene
+–
+Those who design and develop the DBMS and System Environment
+–
+They don’t use the database for their own purpose
+36
+Summary
+✓Definitions of Database and Database Applications
+✓Basic Definitions
+✓Typical DBMS Functionality
+✓Example of a Database (UNIVERSITY)
+✓Main Characteristics of the Database Approach
+✓Advantages of Using the Database Approach
+✓When Not to Use Databases
+✓Database Users
+37
+End of Chapter One!
+38
