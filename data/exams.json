@@ -1,0 +1,17 @@
+{
+  "next_id": 2,
+  "exams": [
+    {
+      "id": 1,
+      "name": "Exit Exam 2018",
+      "created_at": "2026-10-03T20:11:39+00:00",
+      "files": [
+        {
+          "name": "Computer Science Exit Exam 2018 with Answer.pdf",
+          "pdf": "1/01_Computer Science Exit Exam 2018 with Answer.pdf",
+          "text": "1/01_Computer Science Exit Exam 2018 with Answer.pages.json"
+        }
+      ]
+    }
+  ]
+}

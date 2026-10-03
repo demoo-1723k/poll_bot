@@ -1,0 +1,74 @@
+{
+  "next_id": 3,
+  "courses": [
+    {
+      "id": 1,
+      "name": "Database",
+      "created_at": "2026-10-03T07:42:30+00:00",
+      "files": [
+        {
+          "name": "DB CH2.pdf",
+          "pdf": "1/01_DB CH2.pdf",
+          "text": "1/01_DB CH2.txt"
+        },
+        {
+          "name": "DB CH1.pdf",
+          "pdf": "1/02_DB CH1.pdf",
+          "text": "1/02_DB CH1.txt"
+        },
+        {
+          "name": "DB CH3.pdf",
+          "pdf": "1/03_DB CH3.pdf",
+          "text": "1/03_DB CH3.txt"
+        },
+        {
+          "name": "DB CH5 (1).pdf",
+          "pdf": "1/04_DB CH5 (1).pdf",
+          "text": "1/04_DB CH5 (1).txt"
+        },
+        {
+          "name": "DB CH4.pdf",
+          "pdf": "1/05_DB CH4.pdf",
+          "text": "1/05_DB CH4.txt"
+        },
+        {
+          "name": "DB CH6.pdf",
+          "pdf": "1/06_DB CH6.pdf",
+          "text": "1/06_DB CH6.txt"
+        },
+        {
+          "name": "DB CH7.pdf",
+          "pdf": "1/07_DB CH7.pdf",
+          "text": "1/07_DB CH7.txt"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ai",
+      "created_at": "2026-10-03T07:45:54+00:00",
+      "files": [
+        {
+          "name": "AI-Chapter3_part I.pdf",
+          "pdf": "2/01_AI-Chapter3_part I.pdf",
+          "text": "2/01_AI-Chapter3_part I.txt"
+        },
+        {
+          "name": "AI-Chapter3_Part II.pdf",
+          "pdf": "2/02_AI-Chapter3_Part II.pdf",
+          "text": "2/02_AI-Chapter3_Part II.txt"
+        },
+        {
+          "name": "AI-Chapter3_Part III.pdf",
+          "pdf": "2/03_AI-Chapter3_Part III.pdf",
+          "text": "2/03_AI-Chapter3_Part III.txt"
+        },
+        {
+          "name": "Introduction_to_Robotics.pdf",
+          "pdf": "2/04_Introduction_to_Robotics.pdf",
+          "text": "2/04_Introduction_to_Robotics.txt"
+        }
+      ]
+    }
+  ]
+}

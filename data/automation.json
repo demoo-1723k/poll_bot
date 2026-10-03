@@ -1,0 +1,14 @@
+{
+  "auto_quiz": {
+    "enabled": false,
+    "time": "07:00",
+    "count": 5,
+    "last_run": "2026-10-03"
+  },
+  "auto_note": {
+    "enabled": false,
+    "time": null,
+    "last_run": null
+  },
+  "note_last_course": null
+}
