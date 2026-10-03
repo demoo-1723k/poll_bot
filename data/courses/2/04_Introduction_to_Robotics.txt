@@ -1,0 +1,202 @@
+Mettu University
+College of Engineering and Technology
+Department of Computer Science
+Chapter 7
+Robotic Sensing and Manipulation
+Prepared by: Zehara Eshetu
+Date: May 20, 2026
+Chapter Roadmap
+Core contents
+1 Introduction to robotics
+2 Sensing
+3 Manipulation
+4 Human-robot interaction
+5 Navigation and path planning
+6 Autonomous robotic systems
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 2/19
+What is a Robot?
+A robot is a programmable machine that can sense
+Everyday examples
+its environment, process information, make
+decisions, and perform physical actions. Robot vacuum cleaner maps a room
+and avoids obstacles.
+Simple view Drone senses height and position
+while flying.
+Sense Think Act Industrial arm assembles, welds,
+paints or packages products.
+Medical robot assists surgeons with
+precise movements.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 3/19
+Why Robotics Matters for Computer Science
+Robotics connects software with the physical
+world.
+It uses algorithms , AI, computer vision, data
+science, control, networking and embedded
+systems.
+A robot must work under uncertainty:
+Computer Science helps robots become
+intelligent, adaptive, and autonomous.
+Robotics is a strong application area for AI
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 4/19
+Main Types of Robots
+By application By mobility and body form
+Industrial robots: welding, painting, Mobile robots: wheeled, tracked and
+assembly, packaging. legged robots.
+Service robots: cleaning, delivery, Aerial robots: drones and UAVs.
+hospitality and security. Humanoid/social robots: human-like
+Medical robots: surgery, rehabilitation and communication and interaction.
+hospital logistics. Collaborative robots: safely work near
+Agricultural robots: planting, spraying, humans.
+harvesting and monitoring.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 5/19
+Basic Components of a Robot
+Sensors
+Communication Controller / AI Power system
+Actuators Mechanical body
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 6/19
+7.1.1 Robotic Sensing
+Robotic sensing means the ability of a robot to
+collect information from itself and from its
+surrounding environment.
+What does sensing do?
+Measures internal state: speed, joint angle,
+battery and motor current.
+Measures external environment: objects,
+distance, light, sound and location.
+Converts physical signals into digital data for
+algorithms.
+Common sensors
+Camera, LiDAR, ultrasonic sensor, IMU, GPS,
+encoder, force/torque sensor, tactile sensor and
+microphone.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 7/19
+7.1.2 Manipulation
+Manipulation is the ability of a robot to
+physically interact with objects.
+Reach an object using joints and links.
+Grasp the object using a gripper or hand.
+Move, place, assemble, cut, weld or sort it.
+Control position, speed and force.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 8/19
+Industrial Manipulation: Real-Life Example
+Industrial robot arm
+An industrial arm can perform repeated
+tasks with high speed and accuracy.
+Carmanufacturing: weldingandpainting.
+Electronics: assembly and testing.
+Food industry: packaging and sorting.
+Warehouse: picking and palletizing.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 9/19
+7.1.3 Human-Robot Interaction (HRI)
+HRI studies how humans and robots
+communicate, cooperate and share tasks
+safely.
+Speech and natural language interaction.
+Gesture, face and emotion recognition.
+Safety zones and collision avoidance.
+Trust, ethics and user acceptance.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 10/19
+Sophia-Like Social Robot: How AI is Used
+AI capabilities in social robots Classroom discussion
+Speech recognition: convert voice to text. What makes a robot appear intelligent: its
+Natural language processing: understand hardware, its software, or the interaction
+questions. between both?
+Dialogue system: generate responses.
+Computer vision: detect faces and
+expressions.
+Motion control: synchronize face, eyes,
+mouth and hands.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 11/19
+How AI Makes Robots Intelligent
+AI makes robots intelligent by helping them perceive, reason, plan, and control their actions.
+Perception Reasoning Planning Control
+An intelligent robot can sense its environment, understand what the sensor data means, decide
+what action is needed, plan how to perform the action, and control its movement.
+Perception Reasoning Planning Control
+Object detection, face Decide what the Select a path, sequence Move motors accurately
+recognition, SLAM, environment means and of actions or task and safely in real time.
+sensor fusion. what goal is active. schedule.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 12/19
+7.2 Navigation and Path Planning
+Navigation means the ability of a robot to move from one place to another safely.
+Path planning means choosing the best or safest route from the starting point to the goal.
+Navigation problem
+A robot must answer three questions:
+1 Where am I?
+2 Where is the goal?
+3 How can I move there safely?
+Localization estimating the robot’s
+current position..
+Mapping builds a model of the
+environment.
+Path planning chooses a route.
+Obstacle avoidance reacts to changes.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 13/19
+7.2.1 Autonomous Robotic Systems
+An autonomous robot can perform tasks with
+limited or no direct human control.
+Autonomy levels
+Manual: human controls every action.
+Assisted: The robot supports the human, but
+the human is still the main decision-maker.
+Supervised autonomy:The human gives the
+goal, and the robot decides how to complete it.
+Full autonomy: robot senses, plans and acts
+independently.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 14/19
+Real-Life Examples of Autonomous Robots
+Robot Main task AI/CS concepts used
+Drone Aerialinspection, filming, delivery, Computer vision, GPS/IMU fu-
+mapping sion, path planning, control
+Warehouse robot Move shelves or parcels SLAM, obstacle avoidance, task
+allocation
+Self-driving car Road navigation Deep learning, perception, local-
+ization, planning
+Surgical robot Assist precise surgery Humancontrol, kinematics, safety
+and visual feedback
+Social robot Conversation and assistance Speech recognition, NLP, face
+recognition, dialogue AI
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 15/19
+Mini Case Study: Obstacle Avoiding Robot
+Scenario Pseudo-code
+A small wheeled robot moves in a classroom read distance
+corridor. It must detect obstacles and choose if distance < threshold:
+stop
+a safe direction.
+turn right
+Sensor: ultrasonic or LiDAR. else:
+move forward
+Controller: Arduino, Raspberry Pi or
+microcontroller.
+Actuators: DC motors.
+Algorithm: if obstacle is near, stop, turn and
+continue.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 16/19
+Ethics, Safety and Social Impact
+Safety Ethics
+Avoid harming humans, property and the Privacy: cameras and microphones collect
+environment. sensitive data.
+Use emergency stop, speed limits and safety Bias: AI decisions may be unfair if data is
+zones. poor.
+Test under different conditions before Jobs: automation changes work roles and
+deployment. skills.
+Responsibility: define who is accountable
+when failure occurs.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 17/19
+Summary
+Robotics combines sensing, decision-making and physical action.
+Sensors allow robots to perceive internal and external conditions.
+Manipulation allows robots to grasp, move and interact with objects.
+HRI focuses on safe and useful communication between humans and robots.
+Navigation and path planning allow robots to move toward goals while avoiding obstacles.
+AI gives robots perception, learning, reasoning and adaptive behavior.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 18/19
+References and Image Notes
+R. Siegwart, I. R. Nourbakhsh and D. Scaramuzza, Introduction to Autonomous Mobile Robots,
+2nd ed., MIT Press, 2011.
+S. Thrun, W. Burgard and D. Fox, Probabilistic Robotics, MIT Press, 2005.
+R.S.SuttonandA.G.Barto,ReinforcementLearning: AnIntroduction,2nded., MITPress, 2018.
+P. Corke, Robotics, Vision and Control, 2nd ed., Springer, 2017.
+Illustrative figures were generated for teaching use to represent robot types, sensing, manipulation,
+social interaction and navigation concepts.
+PreparedforComputerScienceStudents (DepartmentofCompuItnetrroSdciuecntcioen) toRobotics May20,2026 19/19

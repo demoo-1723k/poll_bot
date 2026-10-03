@@ -1,0 +1,297 @@
+Chapter 3 - Part II: Constraint Satisfaction Problems (CSPs)
+Zehara Eshetu
+DepartmentofComputerScience
+2026
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Outline
+Constraint Satisfaction Problems (CSPs)
+1
+Backtracking Search
+2
+Forward Checking
+3
+Local search for CSPs
+4
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 2/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Outline
+Constraint Satisfaction Problems (CSPs)
+1
+Backtracking Search
+2
+Forward Checking
+3
+Local search for CSPs
+4
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 2/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Outline
+Constraint Satisfaction Problems (CSPs)
+1
+Backtracking Search
+2
+Forward Checking
+3
+Local search for CSPs
+4
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 2/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Outline
+Constraint Satisfaction Problems (CSPs)
+1
+Backtracking Search
+2
+Forward Checking
+3
+Local search for CSPs
+4
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 2/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Outline
+Constraint Satisfaction Problems (CSPs)
+1
+Backtracking Search
+2
+Forward Checking
+3
+Local search for CSPs
+4
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 3/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+What are CSPs?
+Definition
+• CSPs are mathematical problems defined as a set of objects whose
+state must satisfy a number of constraints
+− A constraint is a limitation on what type of solution we will
+allow
+• Standard search problem:
+− So far we have formulated problems by stating: initial state,
+actions(successor function), goal test, path cost and heuristic
+function
+− We have not so far made any restrictions on allowable solutions, apart
+from an explicit goal test
+• In CSP a problem is formulated by stating:
+− variables X with values from domain D
+i i
+− goal test is a set of constraints specifying allowable combinati
+values for subsets of variables, X
+i
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 4/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Map-Coloring
+• This is a famous example in AI and is often used to illustrate
+CSPs.
+• Suppose we have a map of a country, like the map of Australia
+as shown below.
+− The country is divided into a number of regions.
+• The problem is how we can colour each region of the country
+using a limited number of colours (in this case 3, RGB) so that
+no two adjacent regions have the same colour.
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 5/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Example: Map-Coloring
+• Variables: WA, NT, Q, NSW, V, SA, T
+• Domains D = red, green, blue
+i
+• Constraints: adjacent regions must have different colors, e.g.
+WA NT, or (WA,NT) in
+{(red,green),(red,blue),(green,red),(green,blue),(blue,red),
+(blue,green)}
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 6/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Example: Map-Coloring
+• Solutions are complete and consistent assignments.
+− Complete: one in which all variables have been assigned a value
+− Consistent: one that does not violate any of the specified
+constraints
+• E.g., WA=red, NT=green, Q=red, NSW=green, V=red,
+SA=blue, T=green
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 7/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Constraint Graph
+• Constraint graph: used to visualize CSPs. nodes are variables,
+edges (arcs) are constraints
+• Graph can be used to simplify search.
+• Binary CSP: each constraint relates two variables
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 8/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Varieties of CSPs
+• It is possible to categorize CSPs based on the type of variable
+they use and on the size of their domains:
+• Discrete CPSs: variables take on discrete values
+− finite domains: the red, green,blue domain in the map-colouring
+problem
+− infinite domains: integers, strings, etc.
+• Continuous CPSs: variables can take one from a continuous
+range of values E.g. real numbers are continuous
+• Finite domain discrete variables are the easiest type
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 9/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Varieties of CSPs
+• We can also categorize CSPs based on the type of their
+constraints
+− Unary constraints involve a single variable. E.g., SA 6= green
+− Binary constraints involve pairs of variables. E.g., SA 6= WA
+− Higher-order constraints involve 3 or more variables
+• The more variables that are involved in a constraint, the harder
+the problem is to solve.
+• Problems with higher-order constraints are the hardest class of
+problems
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 10/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Real-world CSPs
+• Timetable scheduling
+− E.g., Which class is offered when and where? Who teaches
+what class?
+• Transportation scheduling
+− Assignment of vehicle to drivers/jobs
+• Factory scheduling
+− Assignment of staff to jobs/machines, deadlines, etc.
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 11/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Search Techniques for CSPs
+• There are two ways of formulating any search problem: complete state
+and incremental
+• Incremental formulation - states are defined by values assigned so far:
+− Initial state: the empty assignment {}
+− Successor function: assign a value to an unassigned variable that
+does not conflict with current assignment
+• fail if no legal assignments
+− Goal test: the current assignment is complete
+• Complete-state formulation (every state is a complete assignment, but
+may not meet constraints)
+− Initialstateisa(random)completeassignment
+− Successorfunctionmodifies1variabletotrytomeetmoreconstraints
+− Goaltest: thecurrentassignmentisconsistent
+• The search technique that we use for CSPs depends on what formulation
+we use:
+− Incrementalformulation→Backtrackingsearch
+− Complete-stateformulation→Localsearch
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 12/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Outline
+Constraint Satisfaction Problems (CSPs)
+1
+Backtracking Search
+2
+Forward Checking
+3
+Local search for CSPs
+4
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 13/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Backtracking Search
+• The term backtracking search is used for a depth-first search
+that:
+− chooses values for one variable at a time and
+− backtracks when a variable has no legal values left to assign.
+• Variable assignments are commutative, i.e.,
+[ WA = red followed by NT = green ] is the same as
+[ NT = green followed by WA = red ]
+Backtracking Example
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 14/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Improving Backtracking Efficiency
+• General-purpose methods can give huge gains in speed:
+− Which variable should be assigned next?
+− In what order should its values be tried?
+− Can we detect inevitable failure early?
+• These factors all have a big influence on the efficiency of
+backtracking search
+− by making the right choices of variable/value we can make
+dramatic improvements in efficiency.
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 15/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Minimum Remaining Values (MRV)
+• Also known as most constrained variable heuristic
+• Rule: choose the variable with the fewest legal values
+• Which variable shall we try first?
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 16/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Most Constraining Variable
+• Also known as degree heuristic
+• Rule: select variable that is involved in the largest number of
+constraints on other unassigned variables.
+• Degree heuristic is very useful as a tie-breaker among most
+constrained variables
+− In what order should its values be tried?
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 17/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Least Constraining Value
+• Given a variable, choose the least constraining value:
+− the one that rules out the fewest values in the remaining
+variables
+• For example, in the above Figure we have generated the partial
+assignment with WA=red and NT=green, and that our next
+choice is for Q. Blue would be a bad choice, because it
+eliminates the last legal value left for Q’s neighbor, SA The
+least-constraining-value heuristic therefore prefers red to b
+• Combining these heuristics makes Backtracking efficient
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 18/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Outline
+Constraint Satisfaction Problems (CSPs)
+1
+Backtracking Search
+2
+Forward Checking
+3
+Local search for CSPs
+4
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 19/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Forward Checking
+• Idea: keep track of remaining legal values for unassigned
+variables.
+• Terminate search when any variable has no legal values.
+• Assign {WA = red}
+• Effects on other variables connected by constraints with WA
+− NT can no longer be red
+− SA can no longer be red
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 20/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Forward Checking
+• Assign {Q = green}
+• Effects on other variables connected by constraints with WA
+− NT can no longer be green
+− NSW can no longer be green
+− SA can no longer be green
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 21/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Forward Checking
+• If V is assigned blue
+• Effects on other variables connected by constraints with WA
+− SA is empty NSW can no longer be blue
+• FC has detected that partial assignment is inconsistent with the
+constraints and backtracking can occur.
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 22/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Outline
+Constraint Satisfaction Problems (CSPs)
+1
+Backtracking Search
+2
+Forward Checking
+3
+Local search for CSPs
+4
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 23/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Local search for CSPs
+• For complete-state formulation we start with complete states ,
+i.e. all variables assigned
+− Local search techniques typically work with complete states
+• To apply to CSPs:
+− allow states with unsatisfied constraints – start with random
+state
+− operators reassign variable values
+• Variable selection: randomly select any conflicted variable
+• Value selection by min-conflicts heuristic:
+− Select new value that results in a minimum number of conflicts
+with the other variables (choose value that violates the f
+constraints)
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 24/25
+ConstraintSatisfactionProblems(CSPs) BacktrackingSearch ForwardChecking LocalsearchforCSPs
+Exercises
+Consider the map of Ethiopia for the problem of map coloring.
+Zehara Eshetu (Dept.ofComputerScience) Chapter3-PartII:CSPs 2026 25/25
